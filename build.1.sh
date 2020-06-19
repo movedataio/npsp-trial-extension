@@ -4,7 +4,7 @@ sfdx force:auth:jwt:grant \
     --clientid 3MVG97quAmFZJfVyOkWn6I.OXEkyd3kZx55eiuTwIjlg9QQoWkYrtUmtgO34UKAKu_ObE.IxctseUFv9kncK0 \
     --jwtkeyfile ./config/server.key \
     --username jkent@package.npsp.trial.movedata.io \
-    --setalias NpspTrialPkgOrg
+    --setalias NpspTrialPkgOrg1
 
 sfdx force:source:convert -d mdapi-source/unlocked-package -n "MoveData NPSP Trial Extensions"
 
