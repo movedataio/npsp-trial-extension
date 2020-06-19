@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>true</custom> 
+    <userLicense>Salesforce</userLicense>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Opportunity.Donation</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.Grant</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.InKindGift</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.MajorGift</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.MatchingGift</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Opportunity.Membership</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Account.Organization</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+   <layoutAssignments>
+     <layout>Account-Account Layout</layout>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Account-npsp__Household Layout</layout>
+     <recordType>Account.HH_Account</recordType>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Account-npsp__Organization Layout</layout>
+     <recordType>Account.Organization</recordType>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Opportunity-npsp__Donation Layout</layout>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Opportunity-npsp__Donation Layout</layout>
+     <recordType>Opportunity.Donation</recordType>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Opportunity-npsp__Grant Layout</layout>
+     <recordType>Opportunity.Grant</recordType>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Opportunity-npsp__In-Kind Gift Layout</layout>
+     <recordType>Opportunity.InKindGift</recordType>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Opportunity-npsp__Major Gift Layout</layout>
+     <recordType>Opportunity.MajorGift</recordType>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Opportunity-npsp__Matching Gift Layout</layout>
+     <recordType>Opportunity.MatchingGift</recordType>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Opportunity-npsp__Membership Layout</layout>
+     <recordType>Opportunity.Membership</recordType>
+   </layoutAssignments>
+   <layoutAssignments>
+     <layout>Campaign-npsp__NPSP Campaign Layout</layout>
+   </layoutAssignments>
+</Profile>

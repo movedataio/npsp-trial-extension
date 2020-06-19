@@ -1,0 +1,44 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+# [Hack] SFDX: force:source:push with fields for the same object in different directories
+# - https://salesforce.stackexchange.com/questions/229408/sfdx-forcesourcepush-with-fields-for-the-same-object-in-different-directories
+
+#force-app/main/default/objects/Opportunity
+#force-app/npsp-trial/objects/Opportunity
+
+force-app/main/default/profiles
+#force-app/npsp-trial/profiles
+
+# ----------------------------------------------------------------v
+
+force-app/npsp-trial/**
+
+force-app/main/default/featureParameters
+force-app/main/default/reports
+force-app/main/default/reportTypes
+force-app/main/default/duplicateRules
+force-app/main/default/matchingRules
+
+force-app/main/default/layouts/Campaign-Campaign Layout.layout-meta.xml
+force-app/main/default/layouts/Campaign-npsp__NPSP Campaign Layout.layout-meta.xml
+force-app/main/default/layouts/Account-npsp__Household Layout.layout-meta.xml
+force-app/main/default/layouts/Account-npsp__Organization Layout.layout-meta.xml
+
+force-app/main/default/layouts/Opportunity-npsp__Donation Layout.layout-meta.xml
+force-app/main/default/layouts/Opportunity-npsp__Grant Layout.layout-meta.xml
+force-app/main/default/layouts/Opportunity-npsp__In-Kind Gift Layout.layout-meta.xml
+force-app/main/default/layouts/Opportunity-Opportunity %28Marketing%29 Layout.layout-meta.xml
+force-app/main/default/layouts/Opportunity-npsp__Major Gift Layout.layout-meta.xml
+force-app/main/default/layouts/Opportunity-npsp__Matching Gift Layout.layout-meta.xml
+force-app/main/default/layouts/Opportunity-npsp__Membership Layout.layout-meta.xml
+force-app/main/default/layouts/Opportunity-Opportunity %28Sales%29 Layout.layout-meta.xml
+force-app/main/default/layouts/Opportunity-Opportunity %28Support%29 Layout.layout-meta.xml
+force-app/main/default/layouts/Opportunity-Opportunity Layout.layout-meta.xml
+
+force-app/main/default/layouts/Contact-npsp__Contact Layout.layout-meta.xml
+force-app/main/default/layouts/Contact-Contact Layout.layout-meta.xml
+force-app/main/default/layouts/Contact-Contact %28Marketing%29 Layout.layout-meta.xml
+force-app/main/default/layouts/Contact-Contact %28Support%29 Layout.layout-meta.xml
+force-app/main/default/layouts/Contact-Contact %28Sales%29 Layout.layout-meta.xml

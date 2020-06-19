@@ -1,0 +1,12 @@
+{
+    "Username": "tester@npsp.trial.test.movedata.io",
+    "LastName": "Tester",
+    "Email": "jkent@movedata.io",
+    "Alias": "mdtester",
+    "TimeZoneSidKey": "Australia/Sydney",
+    "LocaleSidKey": "en_AU",
+    "EmailEncodingKey": "UTF-8",
+    "LanguageLocaleKey": "en_US",
+    "profileName": "System Administrator",
+    "generatePassword": true
+}

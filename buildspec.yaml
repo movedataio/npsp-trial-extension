@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - npm install sfdx-cli --global
+  build:
+    commands:
+       - echo "$SSL_CERT" > config/server.key
+       - sfdx --version
+       - sfdx force:auth:jwt:grant --clientid $SFDX_CLIENT_ID --jwtkeyfile ./config/server.key --username $SFDX_USERNAME --setalias $SFDX_ALIAS
+       - "sfdx force:source:convert -d mdapi-source/unlocked-package -n \"$PACKAGE_NAME\""
+       - sfdx force:mdapi:deploy -d mdapi-source/unlocked-package -u $SFDX_ALIAS -l RunLocalTests -w 15
+       - "VERSION_CONFIG=$(aws dynamodb get-item --table-name $TABLE_NAME --key '{ \"configKey\": { \"S\": \"version\" } }')"
+       - VERSION_MAJOR=$(echo $VERSION_CONFIG | jq -r '.Item.major.S')
+       - VERSION_MINOR=$(echo $VERSION_CONFIG | jq -r '.Item.minor.S')
+       - VERSION_MINOR=$((VERSION_MINOR+1))
+       - "VERSION=\"$VERSION_MAJOR.$VERSION_MINOR\" && echo \"New Version: $VERSION\""
+       - "PACKAGE_JSON=$(sfdx force:package1:version:create -i $SFDX_PACKAGE_ID -m -n \"Version $VERSION\" -v \"$VERSION\" -u $SFDX_ALIAS -w 15 --json) && echo $PACKAGE_JSON"
+       - PACKAGE_VERSION=$(echo $PACKAGE_JSON | jq -r '.result.MetadataPackageVersionId') && echo $PACKAGE_VERSION
+       - "VERSION_JSON=\"{ \\\"configKey\\\": { \\\"S\\\": \\\"version\\\" }, \\\"major\\\": { \\\"S\\\": \\\"$VERSION_MAJOR\\\" }, \\\"minor\\\": { \\\"S\\\": \\\"$VERSION_MINOR\\\" } }\" && echo $VERSION_JSON"
+       - "PACKAGE_VERSION_JSON=\"{ \\\"configKey\\\": { \\\"S\\\": \\\"packageVersion\\\" }, \\\"value\\\": { \\\"S\\\": \\\"$PACKAGE_VERSION\\\" } }\" && echo $PACKAGE_VERSION_JSON"
+       - "eval \"aws dynamodb put-item --table-name $TABLE_NAME --item '$VERSION_JSON'\""
+       - "eval \"aws dynamodb put-item --table-name $TABLE_NAME --item '$PACKAGE_VERSION_JSON'\""

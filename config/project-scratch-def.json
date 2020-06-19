@@ -1,0 +1,13 @@
+{
+    "orgName": "movedata.io NPSP Trial Extension",
+    "edition": "Developer",
+    "features": ["PlatformCache"],
+    "settings": {
+      "lightningExperienceSettings": {
+        "enableS1DesktopEnabled": true
+      },
+      "mobileSettings": {
+        "enableS1EncryptedStoragePref2": false
+      }
+    }
+  }

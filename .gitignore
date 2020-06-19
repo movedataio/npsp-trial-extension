@@ -1,0 +1,14 @@
+.sfdx
+
+# package directories
+node_modules
+jspm_packages
+
+force
+force.exe
+
+mdapi-source
+
+.DS_Store
+
+config/server*

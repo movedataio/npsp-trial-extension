@@ -1,0 +1,47 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "dependencies": [
+                {
+                    "package": "Contacts & Organizations",
+                    "subscriberPackageVersionId": "04t1E000000yASWQA2"
+                },
+                {
+                    "package": "Households",
+                    "subscriberPackageVersionId": "04t2E000003e2nLQAQ"
+                },
+                {
+                    "package": "Relationships",
+                    "subscriberPackageVersionId": "04t2E000003e2nLQAQ"
+                },
+                {
+                    "package": "Recurring Donations",
+                    "subscriberPackageVersionId": "04t1E000001AXcgQAG"
+                },
+                {
+                    "package": "Affiliations",
+                    "subscriberPackageVersionId": "04t2E000001fDQDQA2"
+                },
+                {
+                    "package": "Nonprofit Success Pack",
+                    "subscriberPackageVersionId": "04t1Y0000015hnCQAQ"
+                }
+            ],
+            "package": "MoveData NPSP Trial Extensions",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT"
+        }
+    ],
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "47.0",
+    "packageAliases": {
+        "Contacts & Organizations": "04t1E000000yASWQA2",
+        "Households": "04t2E000003e2nLQAQ",
+        "Relationships": "04t2E000003e2nLQAQ",
+        "Recurring Donations": "04t1E000001AXcgQAG",
+        "Affiliations": "04t2E000001fDQDQA2",
+        "Nonprofit Success Pack": "04t1Y0000015hnCQAQ"
+    }
+}
