@@ -8,7 +8,7 @@ phases:
       - npm install sfdx-cli --global
   build:
     commands:
-       - echo "$SSL_CERT" > config/server.key
+       - aws s3 cp $S3_CERT_LOCATION ./config/server.key
        - sfdx --version
        - sfdx force:auth:jwt:grant --clientid $SFDX_CLIENT_ID --jwtkeyfile ./config/server.key --username $SFDX_USERNAME --setalias $SFDX_ALIAS
        - "sfdx force:source:convert -d mdapi-source/unlocked-package -n \"$PACKAGE_NAME\""
