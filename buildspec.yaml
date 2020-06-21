@@ -12,6 +12,7 @@ phases:
        - sfdx --version
        - sfdx force:auth:jwt:grant --clientid $SFDX_CLIENT_ID --jwtkeyfile ./config/server.key --username $SFDX_USERNAME --setalias $SFDX_ALIAS
        - "sfdx force:source:convert -d mdapi-source/unlocked-package -n \"$PACKAGE_NAME\""
+       - cat ./mdapi-source/unlocked-package/package.xml
        - sfdx force:mdapi:deploy -d mdapi-source/unlocked-package -u $SFDX_ALIAS -l RunLocalTests -w 15
        - "VERSION_CONFIG=$(aws dynamodb get-item --table-name $TABLE_NAME --key '{ \"configKey\": { \"S\": \"version\" } }')"
        - VERSION_MAJOR=$(echo $VERSION_CONFIG | jq -r '.Item.major.S')
